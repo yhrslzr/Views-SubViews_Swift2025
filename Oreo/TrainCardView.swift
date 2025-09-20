@@ -12,7 +12,7 @@ struct TrainCardView: View {
     var iconColor: Color
     
     var body: some View {
-        VStack(){
+                VStack(){
             HStack(){
                 Spacer()
                 Text("Oferta")

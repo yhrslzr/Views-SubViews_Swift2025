@@ -9,12 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView(){
+        
+        
+        ScrollView(.horizontal){
+            HStack(){
+                TransportView(name: "Tren", icon: "tram")
+                TransportView(name: "Bus", icon: "bus")
+                TransportView(name: "Avión", icon: "airplane")
+                TransportView(name: "Ferry", icon: "ferry.fill")
+            }
+        }
+        
+        ScrollView(.vertical){
             TrainCardView(name: "Tren Bala Kodama", iconColor: Color.yellow)
             TrainCardView(name: "Tren Bala Nozomi", iconColor: Color.green)
-            TrainCardView(name: "Tren Bala Sakura", iconColor: Color.blue)
-            TrainCardView(name: "Tren Bala Hikari", iconColor: Color.orange)
-            TrainCardView(name: "Tren Bala Hayabusa", iconColor: Color.black)
+            TrainCardView(name: "Tren Motora Ruidosa", iconColor: Color.blue)
+            TrainCardView(name: "Tren Bala Wanya", iconColor: Color.orange)
+            TrainCardView(name: "Tren Bala Osaka", iconColor: Color.black)
             TrainCardView(name: "JR Yamanote", iconColor: Color.teal)
             TrainCardView(name: "JR Chuou", iconColor: Color.pink)
             TrainCardView(name: "Sanyou Line", iconColor: Color.indigo)
