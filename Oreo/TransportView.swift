@@ -27,14 +27,14 @@ struct TransportView: View {
                     }
                 }
             
-            if pressed {
-                Image(systemName: "figure.run")
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Color.blue)
-                    .clipShape(Ellipse())
-                    .transition(.slide)
-            }
+//            if pressed {
+//                Image(systemName: "figure.run")
+//                    .foregroundColor(.white)
+//                    .padding(8)
+//                    .background(Color.blue)
+//                    .clipShape(Ellipse())
+//                    .transition(.slide)
+//            }
         }
         
     }
