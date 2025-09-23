@@ -8,15 +8,38 @@
 import SwiftUI
 
 struct TransportView: View {
-    var name: String
-    var icon: String
+    @State var pressed: Bool = false
+    let name: String
+    let icon: String
+    
+    func labelPresionado () -> CGFloat {
+        return pressed ? 180 : 0
+    }
     
     var body: some View {
-        Label(name, systemImage: icon)
-            .modifier(CardViewModifier())
+        VStack {
+            Label(name, systemImage: icon)
+                .modifier(CardViewModifier(bgColor: Color.green))
+                .rotationEffect(.degrees(labelPresionado()))
+                .onTapGesture {
+                    withAnimation(){
+                        self.pressed.toggle()
+                    }
+                }
+            
+            if pressed {
+                Image(systemName: "figure.run")
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Color.blue)
+                    .clipShape(Ellipse())
+                    .transition(.slide)
+            }
+        }
+        
     }
 }
 
 #Preview {
-    TransportView(name: "Medio de transporte", icon: "car")
+    TransportView(name: "Barco", icon: "sailboat")
 }
