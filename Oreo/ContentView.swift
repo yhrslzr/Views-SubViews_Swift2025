@@ -10,18 +10,29 @@ import SwiftUI
 struct ContentView: View {
     
     @State var pressed: Bool = false
+    @State var cardSelect: Int = -1
+    @State var destino: String = ""
     
     var body: some View {
         
         ScrollView{
+            
+            Text("content view \(cardSelect)")
+            
+            TextField("¿A dónde quieres viajar?", text: $destino)
+                .disableAutocorrection(true)
+                .autocapitalization(.words)
+            
+            Text ("Viajarás a \(destino)")
+            
             ScrollView(.horizontal){
                 HStack(){
-                    TransportView(name: "Avión", icon: "airplane")
-                    TransportView(name: "Barco", icon: "sailboat")
-                    TransportView(name: "Tren" , icon: "tram")
-                    TransportView(name: "Medio de transporte", icon: "car")
-                    TransportView(name: "Bus", icon: "bus")
-                    TransportView(name: "Ferry", icon: "ferry.fill")
+                    TransportView(pressed: $pressed, name: "Avión", icon: "airplane", index: 0, selectedIndex: $cardSelect)
+                    TransportView(pressed: $pressed, name: "Barco", icon: "sailboat", index: 1, selectedIndex: $cardSelect)
+                    TransportView(pressed: $pressed, name: "Tren" , icon: "tram", index: 2, selectedIndex: $cardSelect)
+                    TransportView(pressed: $pressed, name: "Bus", icon: "bus", index: 3, selectedIndex: $cardSelect)
+                    TransportView(pressed: $pressed, name: "Ferry", icon: "ferry.fill", index: 4, selectedIndex: $cardSelect)
+                    TransportView(pressed: $pressed, name: "Medio de transporte", icon: "car", index: 5, selectedIndex: $cardSelect)
                 }
             }
             

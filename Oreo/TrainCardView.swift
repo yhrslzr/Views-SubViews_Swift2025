@@ -18,7 +18,7 @@ struct TrainCardView: View {
                 Text("Oferta")
                     .padding(.vertical, 4)
                     .padding(.horizontal, 12)
-                    .background(Color.green)
+                    .background(iconColor)
                     .foregroundColor(.white)
                     .cornerRadius(2)
                     .frame( maxWidth: .infinity, alignment: .trailing)
